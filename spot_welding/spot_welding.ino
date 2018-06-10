@@ -1,5 +1,5 @@
 
-int triggerPin = 4;
+int triggerPin = 5;
 int firstPulseMS = 50;
 int secondPulseMS1 = 100;
 int secondPulseMS2 = 150;
@@ -17,6 +17,7 @@ void setup() {
   Serial.println();
   printSettings();
   printHelp();
+   pinMode(triggerPin, OUTPUT);
 }
 
 void loop() {
@@ -84,6 +85,7 @@ void handleSerial(void) {
       case 'o':
         Serial.println("Stays on. To stop, use the 's' command.");
         digitalWrite(triggerPin, HIGH);
+        break;
       case 's':
         Serial.println("STOP!!");
         digitalWrite(triggerPin, LOW);
