@@ -81,8 +81,12 @@ void handleSerial(void) {
         delay(secondPulseMS3);
         digitalWrite(triggerPin, LOW);
         break;
+      case 'o':
+        Serial.println("Stays on. To stop, use the 's' command.");
+        digitalWrite(triggerPin, HIGH);
       case 's':
-        Serial.println("STOP!! won't do anything...");
+        Serial.println("STOP!!");
+        digitalWrite(triggerPin, LOW);
         break;
       case 'h':
         printHelp();
