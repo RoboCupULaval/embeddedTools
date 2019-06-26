@@ -40,7 +40,7 @@ if __name__ == "__main__":
     X = data[:, 1:3]
     y = data[:, 3]
 
-    clf = svm.LinearSVC(penalty='l1', tol=1e-8, max_iter=1000000, dual=False)
+    clf = svm.LinearSVC(penalty='l1', class_weight={-1: 0.1, 1: 1.0}, tol=1e-8, max_iter=1000000, dual=False) 
     clf.fit(X, y)
     clf.densify()
 
