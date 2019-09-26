@@ -4,9 +4,6 @@ import matplotlib.pyplot as plt
 
 import argparse
 
-from sklearn import svm
-
-
 def load_file(file_path):
     with open(file_path) as file:
         raw_data = []
